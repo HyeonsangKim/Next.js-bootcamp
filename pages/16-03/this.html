@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        class Counter{
+            count = 10
+
+            onClickButton(){
+                console.log("now Count",this.count)
+            }
+
+            render(){
+                const button = document.createElement("button")
+                button.innerText = "클릭"
+                button.addEventListener("click",this.onClickButton)
+                document.body.appendChild(button)
+            }
+        }
+        window.onload = function(){
+            const counter = new Counter()
+            counter.render()
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

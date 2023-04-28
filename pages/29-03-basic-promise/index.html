@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promise 연습</title>
+    <script>
+        const onClickThen = () => {
+            new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    const response = "강아지"
+                }, 2000)
+            })
+        }   
+
+        const onClickAwait = () => {
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="">Promise 실행하기(.then)</button>
+    <button onclick="">Promise 실행하기(await)</button>
+</body>
+</html>

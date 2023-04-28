@@ -1,0 +1,57 @@
+<!-- `http://numbersapi.com/random?min=1&max=200` -->
+<!-- `https://koreanjson.com/posts/${num}` -->
+<!-- `https://koreanjson.com/posts?userId=${userId}` -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>콜백과 친구들</title>
+    <script>
+        // function addEventListener(aaa, bbb){
+        //     // 셋팅된 API 주소로 요청
+        //     const res = 70 // 셋팅된 api 주소로부터 받아온 결과
+
+        //     if(aaa === 'load'){
+        //         bbb(res)
+        //     }
+        // }
+
+        const myCallback = () => {
+            const aa = new XMLHttpRequest()
+            aa.open('get', `http://numbersapi.com/random?min=1&max=200`)
+            aa.send()
+            aa.addEventListener('load', (res) => {
+                console.log(res);
+                res.target.response.split(" ")[0]
+
+                const bb = new XMLHttpRequest()
+                bb.open('get',`https://koreanjson.com/posts/${num}`);
+                bb.send();
+                bb.addEventListener('load',(res)=>{
+                    console.log(res);
+                    const userId = JSON.parse(res.target.response).UserId;
+
+                    
+                const cc = new XMLHttpRequest()
+                bb.open('get',`https://koreanjson.com/posts?userId=${userId}`);
+                bb.send();
+                })
+            })
+
+        }
+
+        const myPromise = () => {
+
+        }
+
+        const myAsyncAwait =() => {
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myCallback()">Callback 연습하기!!</button>
+    <button onclick="myPromise()">Promise 연습하기!!</button>
+    <button onclick="myAsyncAwait()">AsyncAwait 연습하기</button>
+</body>
+</html>
