@@ -8,7 +8,7 @@ import { globalStyles } from '../src/commons/styles/globalStyles';
 import { RecoilRoot } from 'recoil';
 
 
-export default function App({ Component}:AppProps) {
+export default function App({ Component, pageProps}:AppProps) {
   
   return (
     <RecoilRoot>
@@ -16,7 +16,7 @@ export default function App({ Component}:AppProps) {
         <>
           <Global styles={globalStyles}/>
           <Layout>
-              <Component />
+              <Component {...pageProps} />
           </Layout>
         </>
       </ApolloSetting>

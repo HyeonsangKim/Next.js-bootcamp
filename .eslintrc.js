@@ -17,10 +17,7 @@ module.exports = {
     sourceType: 'module',
     createDefaultProgram: true,
   },
-  plugins: [
-    'react',
-    '@typescript-eslint'
-  ],
+  plugins: ["react","jest/globals"],
   rules: {
 		'react/prop-types': 'off',
     "react/react-in-jsx-scope": "off",

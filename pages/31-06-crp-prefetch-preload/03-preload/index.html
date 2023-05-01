@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>프리로드</title>
+
+    <!-- 1. 프리로드란 ? 한 번에 6번씩 받아오므로, body태그의 이미지는 가장 마지막에 다운로드-->
+    <!-- 눈에 보이는 이미지를 먼저 다운로드 받아서 보여주고, 클릭하면 실행되는 js는 나중에 받아오기-->
+    <!-- 2. 만약 , 여기서 프리패치를 한다면 ? 프리패치는 다음을 위해서 받는 것이므로 마지막에 받음(img로 한번 받고, prefetch로 1번 총 2번 받음) -->
+
+    <link rel="preload" as="image" href="./img1.jpg"/>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+    <script src="./index2.js"></script>
+    <script src="./index3.js"></script>
+    <script src="./index4.js"></script>
+</head>
+<body>
+    <img src="./img1.jpg">
+</body>
+</html>
